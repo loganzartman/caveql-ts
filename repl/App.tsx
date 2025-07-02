@@ -2,12 +2,14 @@ import CaveqlSvg from "jsx:./caveql.svg";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
+  ChartBarIcon,
   CodeBracketIcon,
   TableCellsIcon,
 } from "@heroicons/react/20/solid";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { compileQuery, formatJS, formatTree, parseQuery } from "../src";
 import { Highlight } from "./components/Highlight";
+import { ResultsChart } from "./components/ResultsChart";
 import { ResultsTable } from "./components/ResultsTable";
 import { Tab } from "./components/Tab";
 import { TabGroup } from "./components/TabGroup";
@@ -112,6 +114,7 @@ export function App() {
           <div className="flex flex-row justify-between">
             <TabList>
               <Tab icon={<TableCellsIcon />}>table</Tab>
+              <Tab icon={<ChartBarIcon />}>chart</Tab>
               <Tab icon={<CodeBracketIcon />}>parse tree</Tab>
               <Tab icon={<CodeBracketIcon />}>generated</Tab>
             </TabList>
@@ -130,6 +133,9 @@ export function App() {
               {results && (
                 <ResultsTable results={results} scrollRef={scrollRef} />
               )}
+            </TabPanel>
+            <TabPanel>
+              {results && <ResultsChart type="bar" results={results} />}
             </TabPanel>
             <TabPanel>
               <pre className="text-wrap break-all overflow-auto">

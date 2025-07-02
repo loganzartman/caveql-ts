@@ -39,6 +39,7 @@
     "@types/node": "^24.0.6",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "buffer": "^6.0.3",
     "mitata": "^1.0.34",
     "parcel": "^2.15.4",
     "postcss": "^8.5.6",
@@ -54,6 +55,7 @@
     "monaco-editor": "^0.52.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "recharts": "^3.0.2",
     "tinyqueue": "^3.0.0"
   }
 }
